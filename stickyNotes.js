@@ -2,47 +2,46 @@ const container = document.querySelector(".container");
 let date = new Date();
 date = date.toLocaleString();
 
+let note = document.querySelector(".note");
+
 console.log(date);
 
-let time = document.querySelector("#time");
+let time = document.querySelector(".time");
 time.innerText = date;
 
-let count = 0;
-
 document.querySelector("#add_note").onclick = function() {
-    count += 1;
-    let note = document.querySelector(".hidden");
-    let clone = note.cloneNode(true);
-    clone.style.visibility = "visible";
-    clone.style.height = "unset";
     let date = new Date();
     date = date.toLocaleString();
 
-    document.querySelector(".container").appendChild(clone);
-    clone.querySelector("#time").innerText = date;
+    let note = document.createElement("div");
+    note.classList.add("note");
 
-    let allChildren = clone.childNodes;
+    let topmost = document.createElement("div");
+    topmost.classList.add("topmost");
 
-    for (let i = 0; i < allChildren.length; i++) {
-        console.log(allChildren[i]);
-    }
-    let button = clone.firstChild.firstChild.lastChild
+    let time = document.createElement("span");
+    time.classList.add("time");
+    time.innerText = date;
 
-    let promise = new Promise((resolce, reject) => {
-        if (button.onclick == true) {
+    let button = document.createElement("button");
+    button.classList.add("collapse");
+    button.innerText = "−";
+    button.onclick = () => {topmost.parentElement.remove()};
 
-        }
-    });
+    let text = document.createElement("textarea");
+    text.placeholder = "Enter text here";
+
+    container.appendChild(note);
+    note.appendChild(topmost);
+    topmost.appendChild(time);
+    topmost.appendChild(button);
+    note.appendChild(text);
 };
 
 document.querySelector("#clear_all").onclick = function() {
     container.innerHTML = "";
 }
 
-document.querySelector("#collapse").onclick = function() {
-    this.parentElement.parentElement.remove();
-}
-
-function collapse() {
-    this.parentElement.remove();
-}
+document.querySelector(".collapse").onclick = () => {
+    note.remove();
+};
