@@ -180,7 +180,7 @@ textarea {
 	margin-top: 10vh;
 }
 
-#collapse {
+.collapse {
 	font-size: 1.5rem;
 	border: none;
 	cursor: pointer;
@@ -191,11 +191,11 @@ textarea {
 	height: 1.5rem;
 }
 
-#collapse:hover {
+.collapse:hover {
 	background-color: #C99420;
 }
 
-#time {
+.time {
 	color: rgba(0, 0, 0, 0.7);
 	font-size: 1rem;
 	font-style: italic;
