@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>stickyNotes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stickyNotes.css">
+        <link rel="icon" href="https://www.reshot.com/preview-assets/icons/4EAG9MXK3D/notepad-4EAG9MXK3D.svg">
+    </head>
+    <body>
+
+        <nav class="control">
+            <h1>Take notes easily.</h1>
+            <div class="control_buttons">
+                <button id="add_note">Add Note</button>
+                <button id="clear_all">Clear All</button>
+            </div>
+        </nav>
+
+        <section class="container">
+            <div class="note">
+                <div class="topmost">
+                    <span id="time"></span>
+                    <button id="collapse" onclick="collapse()">−</button>
+                </div>
+                <textarea placeholder="Enter text here"></textarea>
+            </div>
+        </section>
+
+        <section class="hidden"><div class="note"><div class="topmost"><span id="time"></span><button id="collapse"  onclick="collapse()">−</button></div><textarea placeholder="Enter text here"></textarea></div></section>
+
+        <script src="stickyNotes.js" async defer></script>
+    </body>
+</html>
